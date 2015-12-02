@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Open Source URL Rewriter for .NET / IIS / ASP.NET   &raquo; Custom Transforms</title>
+<meta name="keywords" content=".net url rewriter, url rewriting, url masking, url replace, url rewrite, asp .net, iis rewrite, mod_rewrite iis, IISRewrite, iis url rewriting, iis url rewriter" />
+<meta name="description" content="Improve your site with Search Engines and users by rewriting 'friendly urls' to physical pages." />
+<link rel="stylesheet" href="http://urlrewriter.net/wp-content/themes/glossyblue-13/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://urlrewriter.net/wp-content/themes/glossyblue-13/print.css" type="text/css" media="print" />
+<link rel="alternate" type="application/rss+xml" title="Open Source URL Rewriter for .NET / IIS / ASP.NET &raquo; Custom Transforms Comments Feed" href="http://urlrewriter.net/index.php/support/reference/transforms/custom-transform/feed" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://urlrewriter.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://urlrewriter.net/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Open Source URL Rewriter for .NET / IIS / ASP.NET' href='http://urlrewriter.net' />
+<link rel='up' title='Transforms' href='http://urlrewriter.net/index.php/support/reference/transforms' />
+<link rel='prev' title='base64decode' href='http://urlrewriter.net/index.php/support/reference/transforms/base64decode' />
+<link rel='next' title='Parsers' href='http://urlrewriter.net/index.php/support/reference/parsers' />
+<meta name="generator" content="WordPress 3.1.2" />
+<link rel='canonical' href='http://urlrewriter.net/index.php/support/reference/transforms/custom-transform' />
+</head>
+<body>
+<div id="page">
+  <div id="header">
+    <div id="headerimg">
+	  <h1><a href="http://urlrewriter.net/">Open Source URL Rewriter for .NET / IIS / ASP.NET</a></h1>
+	  <div class="description"></div>
+	</div>
+	<ul id="nav">
+	  <li class="page_item page-item-2"><a href="http://urlrewriter.net/" title="Home">Home</a></li>
+<li class="page_item page-item-43"><a href="http://urlrewriter.net/index.php/download" title="Download">Download</a></li>
+<li class="page_item page-item-53 current_page_ancestor"><a href="http://urlrewriter.net/index.php/support" title="Help">Help</a></li>
+	</ul>
+  </div>
+  <!--/header -->
+  <div id="content">
+<script type="text/javascript"><!--
+google_ad_client = "pub-8647031000532118";
+/* Home Top Banner */
+google_ad_slot = "3159431532";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+  
+    
+  	
+	<div class="post" id="post-38">
+        	<h2><a href="http://urlrewriter.net/index.php/support/reference/transforms/custom-transform" rel="bookmark" title="Permanent Link to Custom Transforms">Custom Transforms</a></h2>
+		<div class="post-content">
+			<p>Custom transforms allow you to extend the <em>UrlRewriter.NET</em> component by adding your own powerful text transformations that you can use in your rewriting rules.</p>
+<p>To create a custom transform, you create a class that implements the <a href="/wp-content/help/index.php?pg=Intelligencia.UrlRewriter.IRewriteTransform.html">IRewriteTransform interface</a>.  Then, you register this class as a transform.</p>
+<h3>Examples</h3>
+<h4>Creating the transform class</h4>
+<p>If you wanted to map all underscores to dashes, you could define a transform class to do this:<br />
+<code>public class MakeDashTransform : <a href="/wp-content/help/index.php?pg=Intelligencia.UrlRewriter.IRewriteTransform.html">IRewriteTransform</a><br />
+{<br />
+public string <a href="/wp-content/help/index.php?pg=Intelligencia.UrlRewriter.IRewriteTransform.ApplyTransform.html">ApplyTransform</a>(string input)<br />
+{<br />
+// Replace all underscores with dashes...<br />
+return input.Replace("_", "-");<br />
+}</code></p>
+<p>public string <a href="/wp-content/help/index.php?pg=Intelligencia.UrlRewriter.IRewriteTransform.Name.html">Name</a><br />
+{<br />
+get<br />
+{<br />
+return &#8220;makedash&#8221;;<br />
+}<br />
+}<br />
+}</p>
+<h4>Registering the transform</h4>
+<p>In order for the transform to be recognised by <em>UrlRewriter.NET</em>, you have to register it.<br />
+<code>&lt;register transform="MyNamespace.MakeDashTransform, MyAssembly" /&gt;</code></p>
+<h4>Using the transform</h4>
+<p>Once the transform has been registered, you can use it as follows:<br />
+<code>&lt;rewrite url="/([^\.]+)(\.aspx.+)" to="/${makedash($1)}$2" /&gt;</code></p>
+<h3>See Also</h3>
+<ul>
+<li><a href="/index.php/support/reference/transforms/">Transforms</a></li>
+<li><a href="/wp-content/help/index.php?pg=Intelligencia.UrlRewriter.IRewriteTransform.html">IRewriteTransform interface</a></li>
+<li><a href="http://urlrewriter.net/">asp .net url rewriter</a></li>
+</ul>
+					</div>
+	</div>
+	
+		
+<script type="text/javascript" src="http://www.assoc-amazon.com/s/link-enhancer?tag=sethyates-20&o=1">
+</script>
+<noscript>
+    <img src="http://www.assoc-amazon.com/s/noscript?tag=sethyates-20" alt="" />
+</noscript>
+<br />
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-8647031000532118";
+/* Content Page Bottom Square */
+google_ad_slot = "9850637672";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	
+  </div><!--/content -->
+  
+<div id="sidebar">
+<ul>
+
+  
+    
+    <li>
+      <h2 class="sidebartitle">Help</h2>
+      <ul class="list-page">
+        <li class="page_item page-item-52"><a href="http://urlrewriter.net/index.php/support/requirements" title="Requirements">Requirements</a></li>
+<li class="page_item page-item-48"><a href="http://urlrewriter.net/index.php/support/configuration" title="Configuration">Configuration</a></li>
+<li class="page_item page-item-47"><a href="http://urlrewriter.net/index.php/support/installation" title="Installation">Installation</a>
+<ul class='children'>
+	<li class="page_item page-item-49"><a href="http://urlrewriter.net/index.php/support/installation/windows-server-2003" title="Installing UrlRewriter.NET on Windows Server 2003">Installing UrlRewriter.NET on Windows Server 2003</a></li>
+	<li class="page_item page-item-50"><a href="http://urlrewriter.net/index.php/support/installation/windows-2000-server" title="Installing UrlRewriter.NET on Windows 2000 Server">Installing UrlRewriter.NET on Windows 2000 Server</a></li>
+	<li class="page_item page-item-51"><a href="http://urlrewriter.net/index.php/support/installation/windows-xp" title="Installing UrlRewriter.NET on Windows XP">Installing UrlRewriter.NET on Windows XP</a></li>
+	<li class="page_item page-item-57"><a href="http://urlrewriter.net/index.php/support/installation/limitations" title="Limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="page_item page-item-3 current_page_ancestor"><a href="http://urlrewriter.net/index.php/support/reference" title="Reference">Reference</a>
+<ul class='children'>
+	<li class="page_item page-item-4"><a href="http://urlrewriter.net/index.php/support/reference/actions" title="Actions">Actions</a>
+	<ul class='children'>
+		<li class="page_item page-item-5"><a href="http://urlrewriter.net/index.php/support/reference/actions/if" title="if">if</a></li>
+		<li class="page_item page-item-67"><a href="http://urlrewriter.net/index.php/support/reference/actions/unless" title="unless">unless</a></li>
+		<li class="page_item page-item-8"><a href="http://urlrewriter.net/index.php/support/reference/actions/rewrite" title="rewrite">rewrite</a></li>
+		<li class="page_item page-item-9"><a href="http://urlrewriter.net/index.php/support/reference/actions/redirect" title="redirect">redirect</a></li>
+		<li class="page_item page-item-10"><a href="http://urlrewriter.net/index.php/support/reference/actions/set-status" title="set status">set status</a></li>
+		<li class="page_item page-item-11"><a href="http://urlrewriter.net/index.php/support/reference/actions/forbidden" title="forbidden">forbidden</a></li>
+		<li class="page_item page-item-12"><a href="http://urlrewriter.net/index.php/support/reference/actions/gone" title="gone">gone</a></li>
+		<li class="page_item page-item-13"><a href="http://urlrewriter.net/index.php/support/reference/actions/not-allowed" title="not-allowed">not-allowed</a></li>
+		<li class="page_item page-item-14"><a href="http://urlrewriter.net/index.php/support/reference/actions/not-found" title="not-found">not-found</a></li>
+		<li class="page_item page-item-15"><a href="http://urlrewriter.net/index.php/support/reference/actions/not-implemented" title="not-implemented">not-implemented</a></li>
+		<li class="page_item page-item-16"><a href="http://urlrewriter.net/index.php/support/reference/actions/add-header" title="add header">add header</a></li>
+		<li class="page_item page-item-17"><a href="http://urlrewriter.net/index.php/support/reference/actions/set-cookie" title="set cookie">set cookie</a></li>
+		<li class="page_item page-item-18"><a href="http://urlrewriter.net/index.php/support/reference/actions/set-property" title="set property">set property</a></li>
+		<li class="page_item page-item-19"><a href="http://urlrewriter.net/index.php/support/reference/actions/custom-action" title="Creating a Custom Action">Creating a Custom Action</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-20"><a href="http://urlrewriter.net/index.php/support/reference/conditions" title="Conditions">Conditions</a>
+	<ul class='children'>
+		<li class="page_item page-item-21"><a href="http://urlrewriter.net/index.php/support/reference/conditions/address" title="address">address</a></li>
+		<li class="page_item page-item-22"><a href="http://urlrewriter.net/index.php/support/reference/conditions/header-match" title="header match">header match</a></li>
+		<li class="page_item page-item-23"><a href="http://urlrewriter.net/index.php/support/reference/conditions/method" title="method">method</a></li>
+		<li class="page_item page-item-24"><a href="http://urlrewriter.net/index.php/support/reference/conditions/property-match" title="property match">property match</a></li>
+		<li class="page_item page-item-25"><a href="http://urlrewriter.net/index.php/support/reference/conditions/exists" title="exists">exists</a></li>
+		<li class="page_item page-item-26"><a href="http://urlrewriter.net/index.php/support/reference/conditions/url-match" title="url">url</a></li>
+		<li class="page_item page-item-27"><a href="http://urlrewriter.net/index.php/support/reference/conditions/custom-condition" title="Creating a Custom Condition">Creating a Custom Condition</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-31 current_page_ancestor current_page_parent"><a href="http://urlrewriter.net/index.php/support/reference/transforms" title="Transforms">Transforms</a>
+	<ul class='children'>
+		<li class="page_item page-item-32"><a href="http://urlrewriter.net/index.php/support/reference/transforms/decode" title="decode">decode</a></li>
+		<li class="page_item page-item-33"><a href="http://urlrewriter.net/index.php/support/reference/transforms/encode" title="encode">encode</a></li>
+		<li class="page_item page-item-34"><a href="http://urlrewriter.net/index.php/support/reference/transforms/lower" title="lower">lower</a></li>
+		<li class="page_item page-item-35"><a href="http://urlrewriter.net/index.php/support/reference/transforms/upper" title="upper">upper</a></li>
+		<li class="page_item page-item-36"><a href="http://urlrewriter.net/index.php/support/reference/transforms/base64" title="base64">base64</a></li>
+		<li class="page_item page-item-37"><a href="http://urlrewriter.net/index.php/support/reference/transforms/base64decode" title="base64decode">base64decode</a></li>
+		<li class="page_item page-item-30"><a href="http://urlrewriter.net/index.php/support/reference/transforms/static" title="Static Mapping">Static Mapping</a></li>
+		<li class="page_item page-item-38 current_page_item"><a href="http://urlrewriter.net/index.php/support/reference/transforms/custom-transform" title="Custom Transforms">Custom Transforms</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-68"><a href="http://urlrewriter.net/index.php/support/reference/default-documents" title="Default Documents">Default Documents</a></li>
+	<li class="page_item page-item-39"><a href="http://urlrewriter.net/index.php/support/reference/parsers" title="Parsers">Parsers</a>
+	<ul class='children'>
+		<li class="page_item page-item-40"><a href="http://urlrewriter.net/index.php/support/reference/parsers/action" title="register parser (action)">register parser (action)</a></li>
+		<li class="page_item page-item-41"><a href="http://urlrewriter.net/index.php/support/reference/parsers/condition" title="register parser (condition)">register parser (condition)</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-42"><a href="http://urlrewriter.net/index.php/support/reference/error-handler" title="Error Handlers">Error Handlers</a>
+	<ul class='children'>
+		<li class="page_item page-item-54"><a href="http://urlrewriter.net/index.php/support/reference/error-handler/error-page" title="Error Page">Error Page</a></li>
+		<li class="page_item page-item-55"><a href="http://urlrewriter.net/index.php/support/reference/error-handler/custom-error-handler" title="Custom Error Handler">Custom Error Handler</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-62"><a href="http://urlrewriter.net/index.php/support/reference/loggers" title="Loggers">Loggers</a>
+	<ul class='children'>
+		<li class="page_item page-item-63"><a href="http://urlrewriter.net/index.php/support/reference/loggers/debug-logger" title="Debug Logger">Debug Logger</a></li>
+		<li class="page_item page-item-64"><a href="http://urlrewriter.net/index.php/support/reference/loggers/custom-logger" title="Custom Logger">Custom Logger</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-56"><a href="http://urlrewriter.net/index.php/support/reference/expressions" title="Expressions">Expressions</a></li>
+</ul>
+</li>
+<li class="page_item page-item-46"><a href="http://urlrewriter.net/index.php/support/using" title="Common Rules">Common Rules</a></li>
+      </ul>
+    </li>
+
+    
+   <li>
+      <h2 class="sidebartitle">Sponsor</h2>
+<script type="text/javascript"><!--
+google_ad_client = "pub-8647031000532118";
+/* Content Side Dom Col */
+google_ad_slot = "1124121052";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+   </li>
+
+    <li>
+      <h2 class="sidebartitle">Links</h2>
+      <ul class="list-blogroll">
+              </ul>
+   </li>
+
+  
+ </ul>
+</div>
+<!--/sidebar -->
+  <div id="footer">
+  <div class="footer-recent-posts"><br />
+  </div>
+  <div class="footer-recent-comments"><br />
+  </div>
+  <div class="footer-about"><br />
+  </div>
+  <hr class="clear" />
+  </div><!--/footer -->
+</div><!--/page -->
+
+<!--credits start -->
+<div id="credits">
+<div class="alignleft">WP Theme &amp; Icons by <a href="http://www.ndesign-studio.com" rel="nofollow">N.Design Studio</a></div> 
+<div class="alignright">&nbsp;</div>
+</div>
+<!--credits end -->
+</body>
+</html>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-347024-1");
+pageTracker._trackPageview();
+</script>
